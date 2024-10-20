@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V SOLUTIONS - Enhanced Computer Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .p { width: 60px; background-color: #0085C4; height: 2px; }
+        .d { background-color: rgba(129, 138, 139, 0.503);text-align: center; }
+        .image-wrapper img { width: 100%; border-radius: 5px; cursor: pointer; }
+        .modal-close-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; }
+        .modal-image { max-width: 100%; border-radius: 10px; }
+        .modal-header{background-color:greenyellow;}
+        .d-flex{width:50%;height:50%}
+        footer{background-color: black;color:beige}
+        section { display: none; } /* Initially hide all sections */
+        #welcome { display: block; } /* Show welcome section initially */
+        .navbar-brand{border-radius: 30%;background-color: beige;color:gold;text-shadow: 2px 2px 1px rgb(140, 208, 23);border-width: 90px;}
+    </style>
+</head>
+<body>
+    <div class="d py-3"><h3>Enhanced-Computer-Services</h3><p>(Customers are very happy on Top-Notch performance by my Technicians) </p></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><h2><b>ECS</b></h2></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('about')">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('payment')">Payment Info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('gallery')">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="welcome" class="py-5 text-center">
+        <h1>Welcome to V SOLUTIONS</h1>
+        <p>(Your trusted partner for web applications and IT services.)</p>
+    </section>
+
+    <!-- Welcome Section (shown initially) -->
+    
+
+    <!-- About Us Section -->
+    <section id="about" class="py-4">
+        <div class="container">
+            <h2 class="text-center">About Us</h2>
+            <p class="text-center">Delivering exceptional web applications with customer satisfaction at the core.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#aboutDetails">Show More</button>
+            <div class="collapse mt-3" id="aboutDetails">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Our Specialties</h4>
+                        <ul>
+                            <li>Ethical business policies</li>
+                            <li>Live in touch with our customers</li>
+                            <li>Transparent dealings</li>
+                            <li>Wide connectivity</li>
+                            <li>We listen, we understand, we provide solutions</li>
+                            <li>A great experience with happy clients</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Experience</h4>
+                        <ul>
+                            <li>18 years of experience in the field</li>
+                            <li>Team members with 15+ years of experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment" class="bg-light py-4">
+        <div class="container">
+            <h2 class="text-center">Payment Methods</h2><p align="center">(All payment types Available)</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#paymentDetails">Show Payment Info</button>
+            <div class="collapse mt-3" id="paymentDetails">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Payment Options</h4>
+                        <p>Paytm: +91-9100371311</p>
+                        <p>PhonePe: +91-9100371311</p>
+                        <p>Google Pay: +91-9100371311</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Bank Account Details</h4>
+                        <p><strong>Bank:</strong> UNION BANK</p>
+                        <p><strong>IFSC:</strong> UBIN0808806</p>
+                        <p><strong>Account Name:</strong> Kanugula Durga Vara Prasada Rao</p>
+                        <p><strong>Account Number:</strong> 088010100105302</p>
+                        <p><strong>Account Type:</strong> SB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-3">
+        <div class="container">
+            <h2 class="text-center mb-4">Services Available</h2><p align="center">(All services available)</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#galleryContainer">GALLERY Info</button>
+            <div class="collapse mt-4" id="galleryContainer">
+                <div class="d-flex flex-wrap gap-3">
+                    <div class="image-wrapper"><img onclick="openImageModal('https://vcard-bucket.s3.us-east-2.amazonaws.com/A71/125/1720435195744.jpg')" src="https://vcard-bucket.s3.us-east-2.amazonaws.com/A71/125/1720435195744.jpg"></div>
+                    <div class="image-wrapper"><img onclick="openImageModal('https://vcard-bucket.s3.us-east-2.amazonaws.com/A71/125/1720435204947.jpg')" src="https://vcard-bucket.s3.us-east-2.amazonaws.com/A71/125/1720435204947.jpg"></div>
+                    <div class="image-wrapper"><img onclick="openImageModal('https://vcard-bucket.s3.us-east-2.amazonaws.com/A71/125/1720435218739.png')" src="https://vcard-bucket.s3.us-east-2.amazonaws.com/A71/125/1720435218739.png"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Full Image -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center position-relative">
+                    <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal"></button>
+                    <img id="modalImage" class="modal-image" src="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="regName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="regName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="regEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="regPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 V SOLUTIONS. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript for Section Visibility and Image Modal -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => section.style.display = 'none');
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function openImageModal(imageUrl) {
+            document.getElementById('modalImage').src = imageUrl;
+            var imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+            imageModal.show();
+        }
+    </script>
+</body>
+</html>
